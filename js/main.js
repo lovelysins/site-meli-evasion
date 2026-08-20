@@ -122,40 +122,76 @@
     });
   }
 
-  /* ---------- Carte interactive des excursions ---------- */
+  /* ---------- Carte interactive des excursions ----------
+     Coordonnées vérifiées (Wikipedia / sources géographiques publiques).
+     Nosy Fanihy n'a pas de coordonnées fiables trouvées : elle reste
+     dans le catalogue des destinations mais n'apparaît pas sur la carte. */
   var EXCURSIONS_MAP_DATA = [
     {
       coords: [-13.4828, 48.2367],
       icon: "icon-mask",
-      tag: "Journée complète",
-      title: "Nosy Komba & Tanikely",
-      meta: "Environ 6 à 7 heures",
-      desc: "Snorkeling dans la réserve marine de Tanikely, visite du village et du parc à lémuriens.",
+      tag: "Snorkeling",
+      title: "Nosy Tanikely",
+      meta: "Journée ou demi-journée",
+      desc: "Réserve marine : tortues, poissons tropicaux et fonds coralliens protégés.",
       price: "à partir de 70 €/pers.",
       anchor: "#excursion-tanikely",
-      waMsg: "Bonjour, je suis intéressé(e) par l'excursion Nosy Komba & Tanikely (journée complète). Pouvez-vous m'indiquer les disponibilités ?"
+      waMsg: "Bonjour, je suis intéressé(e) par l'excursion à Nosy Tanikely. Pouvez-vous m'indiquer les disponibilités ?"
     },
     {
       coords: [-13.4667, 48.355],
       icon: "icon-compass",
-      tag: "Demi-journée",
-      title: "Rencontre avec les lémuriens",
-      meta: "Environ 3 heures",
-      desc: "Balade dans la réserve communautaire, observation des lémuriens en semi-liberté.",
+      tag: "Facile",
+      title: "Tour de Nosy Komba",
+      meta: "Demi-journée",
+      desc: "Village, parc à lémuriens en semi-liberté et snorkeling à deux pas du port d'attache.",
       price: "à partir de 35 €/pers.",
-      anchor: "#excursion-lemuriens",
-      waMsg: "Bonjour, je suis intéressé(e) par l'excursion Rencontre avec les lémuriens (demi-journée). Pouvez-vous m'indiquer les disponibilités ?"
+      anchor: "#excursion-komba",
+      waMsg: "Bonjour, je suis intéressé(e) par le tour de Nosy Komba. Pouvez-vous m'indiquer les disponibilités ?"
     },
     {
-      coords: [-13.475, 48.295],
+      coords: [-13.4249, 48.3633],
+      icon: "icon-compass",
+      tag: "Facile",
+      title: "Nosy Vorona",
+      meta: "Demi-journée",
+      desc: "Le petit îlot au phare entre Nosy Be et Nosy Komba, sanctuaire d'oiseaux marins.",
+      price: "Tarif sur demande",
+      anchor: "#excursion-vorona",
+      waMsg: "Bonjour, je suis intéressé(e) par l'excursion à Nosy Vorona. Pouvez-vous m'indiquer les disponibilités ?"
+    },
+    {
+      coords: [-13.7167, 48.2],
+      icon: "icon-leaf",
+      tag: "Atypique",
+      title: "Nosy Mamoko",
+      meta: "Journée complète",
+      desc: "Tortues terrestres et cascade sur la grande terre : une sortie loin des sentiers battus.",
+      price: "Tarif sur demande",
+      anchor: "#excursion-mamoko",
+      waMsg: "Bonjour, je suis intéressé(e) par l'excursion à Nosy Mamoko. Pouvez-vous m'indiquer les disponibilités ?"
+    },
+    {
+      coords: [-13.5833, 47.8167],
+      icon: "icon-compass",
+      tag: "Aventure",
+      title: "Nosy Iranja",
+      meta: "Journée complète (départ tôt)",
+      desc: "Sa langue de sable de 2 km entre deux îlots, l'une des plus belles vues de l'archipel.",
+      price: "Tarif sur demande",
+      anchor: "#excursion-iranja",
+      waMsg: "Bonjour, je suis intéressé(e) par l'excursion à Nosy Iranja. Pouvez-vous m'indiquer les disponibilités ?"
+    },
+    {
+      coords: [-12.9, 48.6],
       icon: "icon-mask",
-      tag: "Demi-journée",
-      title: "Snorkeling & fonds marins",
-      meta: "Environ 4 heures",
-      desc: "Deux à trois spots de snorkeling autour de l'archipel, matériel fourni.",
-      price: "à partir de 45 €/pers.",
-      anchor: "#excursion-snorkeling",
-      waMsg: "Bonjour, je suis intéressé(e) par l'excursion Snorkeling & fonds marins (demi-journée). Pouvez-vous m'indiquer les disponibilités ?"
+      tag: "Aventure",
+      title: "Nosy Mitsio",
+      meta: "Journée complète (départ tôt)",
+      desc: "Un archipel plus au nord aux fonds marins spectaculaires : notre sortie la plus aventureuse.",
+      price: "Tarif sur demande",
+      anchor: "#excursion-mitsio",
+      waMsg: "Bonjour, je suis intéressé(e) par l'excursion à Nosy Mitsio. Pouvez-vous m'indiquer les disponibilités ?"
     },
     {
       coords: [-13.46, 48.34],
@@ -185,12 +221,14 @@
     var mapEl = document.getElementById("excursion-map");
     if (!mapEl || typeof L === "undefined") return;
 
-    var map = L.map(mapEl, { scrollWheelZoom: false }).setView([-13.472, 48.31], 12);
+    var map = L.map(mapEl, { scrollWheelZoom: false });
 
     L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
       maxZoom: 17,
       attribution: '&copy; <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">OpenStreetMap</a>'
     }).addTo(map);
+
+    var markers = [];
 
     EXCURSIONS_MAP_DATA.forEach(function (spot) {
       var iconHtml =
@@ -221,9 +259,36 @@
         '<a href="' + spot.anchor + '" class="map-popup-more">Voir le détail de l’excursion</a>' +
         "</div>";
 
-      L.marker(spot.coords, { icon: divIcon })
+      var marker = L.marker(spot.coords, { icon: divIcon })
         .addTo(map)
         .bindPopup(popupHtml, { closeButton: true, maxWidth: 260 });
+      markers.push(marker);
+    });
+
+    if (markers.length) {
+      var group = L.featureGroup(markers);
+      map.fitBounds(group.getBounds(), { padding: [30, 30] });
+    }
+  }
+
+  /* ---------- Filtres de destinations (Pépites, Aventures, Faciles...) ---------- */
+  function wireDestinationFilters() {
+    var buttons = document.querySelectorAll(".dest-filter");
+    var cards = document.querySelectorAll("[data-categories]");
+    if (!buttons.length || !cards.length) return;
+
+    buttons.forEach(function (btn) {
+      btn.addEventListener("click", function () {
+        buttons.forEach(function (b) { b.classList.remove("is-active"); });
+        btn.classList.add("is-active");
+        var filter = btn.getAttribute("data-filter");
+        cards.forEach(function (card) {
+          var cats = (card.getAttribute("data-categories") || "").split(" ");
+          var show = filter === "toutes" || cats.indexOf(filter) !== -1;
+          card.style.display = show ? "" : "none";
+          if (show) card.classList.add("is-visible");
+        });
+      });
     });
   }
 
@@ -236,5 +301,6 @@
     wireFooterYear();
     wireCarousels();
     wireExcursionMap();
+    wireDestinationFilters();
   });
 })();

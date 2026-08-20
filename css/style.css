@@ -483,6 +483,53 @@ section[id], .card[id] { scroll-margin-top: var(--header-h); }
   color: var(--color-maroon-dark);
 }
 
+/* ===================== Filtres de destinations ===================== */
+.dest-filters {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 40px;
+}
+.dest-filter {
+  font-family: var(--font-body);
+  font-size: .85rem;
+  font-weight: 600;
+  padding: .55em 1.2em;
+  border-radius: 999px;
+  border: 1.5px solid var(--color-maroon);
+  background: transparent;
+  color: var(--color-maroon-dark);
+  cursor: pointer;
+  transition: background-color .18s ease, color .18s ease;
+}
+.dest-filter:hover { background: rgba(111,43,39,.08); }
+.dest-filter.is-active { background: var(--color-maroon); color: #fff; }
+
+/* ===================== Profil pêcheur (bandeau) ===================== */
+.profile-banner {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  flex-wrap: wrap;
+  background: #fff;
+  border-radius: var(--radius-lg);
+  padding: 28px 32px;
+  box-shadow: var(--shadow-card);
+}
+.profile-banner-icon {
+  flex-shrink: 0;
+  width: 56px; height: 56px;
+  border-radius: 50%;
+  background: var(--color-lagoon);
+  color: #fff;
+  display: flex; align-items: center; justify-content: center;
+}
+.profile-banner-copy { flex: 1 1 320px; }
+.profile-banner-copy .eyebrow { margin-bottom: .2em; }
+.profile-banner-copy h3 { margin-bottom: .3em; font-size: 1.2rem; }
+.profile-banner-copy p:not(.eyebrow) { margin: 0; color: #5a473d; font-size: .92rem; }
+
 /* ===================== Excursions cards ===================== */
 .card-grid {
   display: grid;

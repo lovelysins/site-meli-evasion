@@ -44,6 +44,7 @@
   <symbol id="icon-search" viewBox="0 0 24 24"><circle cx="10.5" cy="10.5" r="6.5" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M15.5 15.5 20 20" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></symbol>
   <symbol id="icon-arrow" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></symbol>
   <symbol id="icon-leaf" viewBox="0 0 24 24"><path d="M4 20c0-8 6-14 16-14 0 10-6 16-14 16a6 6 0 0 1-2-.5Z" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/><path d="M6 18C10 14 14 10 18 7" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/></symbol>
+  <symbol id="icon-fish" viewBox="0 0 24 24"><path d="M2 12c4-4.8 9.5-6.8 14.5-4.6 1.5.7 2.8 1.7 2.8 1.7s-.5 1.4-1 2.9c.5 1.5 1 2.9 1 2.9s-1.3 1-2.8 1.7C11.5 18.8 6 16.8 2 12Z" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/><circle cx="7.6" cy="10.6" r=".7" fill="currentColor"/></symbol>
 
   <!-- Filtre de texture "palissandre sculpté" : bruit procédural animé, utilisé en fond du hero -->
   <filter id="heroGrain" x="-20%" y="-20%" width="140%" height="140%">
@@ -109,8 +110,8 @@
       </a>
       <div class="hero-chips">
         <a href="#excursion-tanikely">Tanikely</a>
-        <a href="#excursion-lemuriens">Lémuriens</a>
-        <a href="#excursion-coucher-soleil">Coucher de soleil</a>
+        <a href="#excursion-iranja">Nosy Iranja</a>
+        <a href="#excursion-fanihy">Nosy Fanihy</a>
         <a href="#excursion-prive">Sur-mesure</a>
       </div>
 
@@ -210,17 +211,23 @@
           </div>
           <span>Tanikely</span>
         </a>
-        <a href="#excursion-lemuriens" class="theme-item reveal">
+        <a href="#excursion-komba" class="theme-item reveal">
           <div class="theme-media" data-fallback-icon="icon-compass">
             <img src="images/excursions/lemuriens.jpg" alt="Lémuriens de Nosy Komba" loading="lazy">
           </div>
-          <span>Lémuriens</span>
+          <span>Nosy Komba</span>
         </a>
-        <a href="#excursion-snorkeling" class="theme-item reveal">
-          <div class="theme-media" data-fallback-icon="icon-mask">
-            <img src="images/excursions/snorkeling.jpg" alt="Fonds marins de l'archipel" loading="lazy">
+        <a href="#excursion-iranja" class="theme-item reveal">
+          <div class="theme-media" data-fallback-icon="icon-compass">
+            <img src="images/excursions/iranja.jpg" alt="Langue de sable de Nosy Iranja" loading="lazy">
           </div>
-          <span>Fonds marins</span>
+          <span>Nosy Iranja</span>
+        </a>
+        <a href="#excursion-fanihy" class="theme-item reveal">
+          <div class="theme-media" data-fallback-icon="icon-mask">
+            <img src="images/excursions/fanihy.jpg" alt="Île de Nosy Fanihy" loading="lazy">
+          </div>
+          <span>Nosy Fanihy</span>
         </a>
         <a href="#excursion-coucher-soleil" class="theme-item reveal">
           <div class="theme-media" data-fallback-icon="icon-sun">
@@ -291,11 +298,11 @@
   </div>
 </section>
 
-<!-- ===================== EXCURSIONS ===================== -->
+<!-- ===================== EXCURSIONS / DESTINATIONS ===================== -->
 <section class="section" id="excursions">
   <div class="container">
     <div class="section-head reveal">
-      <p class="eyebrow">Nos excursions</p>
+      <p class="eyebrow">Nos destinations</p>
       <h2>Choisissez votre évasion</h2>
       <p class="section-lead">
         Tarifs indicatifs par personne, confirmés selon la taille du groupe et la saison — écrivez-nous
@@ -303,72 +310,144 @@
       </p>
     </div>
 
-    <div class="card-grid">
+    <div class="dest-filters" role="tablist" aria-label="Filtrer les destinations">
+      <button type="button" class="dest-filter is-active" data-filter="toutes">Toutes</button>
+      <button type="button" class="dest-filter" data-filter="pepites">Pépites</button>
+      <button type="button" class="dest-filter" data-filter="aventures">Aventures</button>
+      <button type="button" class="dest-filter" data-filter="faciles">Faciles</button>
+      <button type="button" class="dest-filter" data-filter="snorkeling">Snorkeling</button>
+      <button type="button" class="dest-filter" data-filter="atypiques">Atypiques</button>
+    </div>
 
-      <article class="card reveal" id="excursion-tanikely">
+    <div class="card-grid" id="destinations-grid">
+
+      <article class="card reveal" id="excursion-tanikely" data-categories="snorkeling">
         <div class="card-media" data-fallback-icon="icon-mask">
           <img src="images/excursions/tanikely.jpg" alt="Snorkeling à la réserve marine de Tanikely" loading="lazy">
-          <span class="card-tag">Journée complète</span>
+          <span class="card-tag">Snorkeling</span>
         </div>
         <div class="card-body">
-          <h3>Nosy Komba &amp; Tanikely</h3>
-          <p class="card-meta"><svg width="16" height="16"><use href="#icon-clock"/></svg> Environ 6 à 7 heures</p>
-          <p>
-            Snorkeling dans la réserve marine de Tanikely (tortues, poissons tropicaux), visite du village
-            et du parc à lémuriens de Nosy Komba, déjeuner sur une plage de l'archipel.
-          </p>
+          <h3>Nosy Tanikely</h3>
+          <p class="card-meta"><svg width="16" height="16"><use href="#icon-clock"/></svg> Journée ou demi-journée</p>
+          <p>Snorkeling dans la réserve marine de Tanikely : tortues, poissons tropicaux et fonds coralliens protégés.</p>
           <div class="card-footer">
             <span class="price"><small>à partir de</small> 70&nbsp;€ <small>/pers.</small></span>
-            <a href="#" class="btn btn-whatsapp btn-small" data-wa-msg="Bonjour, je suis intéressé(e) par l'excursion Nosy Komba &amp; Tanikely (journée complète). Pouvez-vous m'indiquer les disponibilités ?">
+            <a href="#" class="btn btn-whatsapp btn-small" data-wa-msg="Bonjour, je suis intéressé(e) par l'excursion à Nosy Tanikely. Pouvez-vous m'indiquer les disponibilités ?">
               <svg width="16" height="16"><use href="#icon-whatsapp"/></svg><span>Réserver</span>
             </a>
           </div>
         </div>
       </article>
 
-      <article class="card reveal" id="excursion-lemuriens">
+      <article class="card reveal" id="excursion-komba" data-categories="faciles snorkeling">
         <div class="card-media" data-fallback-icon="icon-compass">
-          <img src="images/excursions/lemuriens.jpg" alt="Lémuriens du parc communautaire de Nosy Komba" loading="lazy">
-          <span class="card-tag">Demi-journée</span>
+          <img src="images/excursions/lemuriens.jpg" alt="Village et lémuriens de Nosy Komba" loading="lazy">
+          <span class="card-tag">Facile</span>
         </div>
         <div class="card-body">
-          <h3>Rencontre avec les lémuriens</h3>
-          <p class="card-meta"><svg width="16" height="16"><use href="#icon-clock"/></svg> Environ 3 heures</p>
-          <p>
-            Balade dans la réserve communautaire de Nosy Komba, observation des lémuriens en semi-liberté
-            et découverte de l'artisanat local du village.
-          </p>
+          <h3>Tour de Nosy Komba</h3>
+          <p class="card-meta"><svg width="16" height="16"><use href="#icon-clock"/></svg> Demi-journée</p>
+          <p>Village, parc à lémuriens en semi-liberté et spots de snorkeling à deux pas de notre port d'attache.</p>
           <div class="card-footer">
             <span class="price"><small>à partir de</small> 35&nbsp;€ <small>/pers.</small></span>
-            <a href="#" class="btn btn-whatsapp btn-small" data-wa-msg="Bonjour, je suis intéressé(e) par l'excursion Rencontre avec les lémuriens (demi-journée). Pouvez-vous m'indiquer les disponibilités ?">
+            <a href="#" class="btn btn-whatsapp btn-small" data-wa-msg="Bonjour, je suis intéressé(e) par le tour de Nosy Komba. Pouvez-vous m'indiquer les disponibilités ?">
               <svg width="16" height="16"><use href="#icon-whatsapp"/></svg><span>Réserver</span>
             </a>
           </div>
         </div>
       </article>
 
-      <article class="card reveal" id="excursion-snorkeling">
-        <div class="card-media" data-fallback-icon="icon-mask">
-          <img src="images/excursions/snorkeling.jpg" alt="Sortie snorkeling autour de l'archipel de Nosy Be" loading="lazy">
-          <span class="card-tag">Demi-journée</span>
+      <article class="card reveal" id="excursion-vorona" data-categories="faciles">
+        <div class="card-media" data-fallback-icon="icon-compass">
+          <img src="images/excursions/vorona.jpg" alt="Île de Nosy Vorona, entre Nosy Be et Nosy Komba" loading="lazy">
+          <span class="card-tag">Facile</span>
         </div>
         <div class="card-body">
-          <h3>Snorkeling &amp; fonds marins</h3>
-          <p class="card-meta"><svg width="16" height="16"><use href="#icon-clock"/></svg> Environ 4 heures</p>
-          <p>
-            Deux à trois spots de snorkeling autour de l'archipel, matériel fourni et encadrement adapté
-            à tous les niveaux, du débutant au plus confirmé.
-          </p>
+          <h3>Nosy Vorona</h3>
+          <p class="card-meta"><svg width="16" height="16"><use href="#icon-clock"/></svg> Demi-journée</p>
+          <p>Le petit îlot au phare entre Nosy Be et Nosy Komba, sanctuaire d'oiseaux marins — une sortie courte et paisible.</p>
           <div class="card-footer">
-            <span class="price"><small>à partir de</small> 45&nbsp;€ <small>/pers.</small></span>
-            <a href="#" class="btn btn-whatsapp btn-small" data-wa-msg="Bonjour, je suis intéressé(e) par l'excursion Snorkeling &amp; fonds marins (demi-journée). Pouvez-vous m'indiquer les disponibilités ?">
+            <span class="price">Tarif sur demande</span>
+            <a href="#" class="btn btn-whatsapp btn-small" data-wa-msg="Bonjour, je suis intéressé(e) par l'excursion à Nosy Vorona. Pouvez-vous m'indiquer les disponibilités ?">
               <svg width="16" height="16"><use href="#icon-whatsapp"/></svg><span>Réserver</span>
             </a>
           </div>
         </div>
       </article>
 
-      <article class="card reveal" id="excursion-coucher-soleil">
+      <article class="card reveal" id="excursion-fanihy" data-categories="pepites snorkeling atypiques">
+        <div class="card-media" data-fallback-icon="icon-mask">
+          <img src="images/excursions/fanihy.jpg" alt="Île de Nosy Fanihy" loading="lazy">
+          <span class="card-tag">Pépite</span>
+        </div>
+        <div class="card-body">
+          <h3>Nosy Fanihy</h3>
+          <p class="card-meta"><svg width="16" height="16"><use href="#icon-clock"/></svg> Journée complète</p>
+          <p>L'île aux chauves-souris, sauvage et peu fréquentée : plage immaculée, snorkeling et vraie sensation de Robinson Crusoé.</p>
+          <div class="card-footer">
+            <span class="price">Tarif sur demande</span>
+            <a href="#" class="btn btn-whatsapp btn-small" data-wa-msg="Bonjour, je suis intéressé(e) par l'excursion à Nosy Fanihy. Pouvez-vous m'indiquer les disponibilités ?">
+              <svg width="16" height="16"><use href="#icon-whatsapp"/></svg><span>Réserver</span>
+            </a>
+          </div>
+        </div>
+      </article>
+
+      <article class="card reveal" id="excursion-mamoko" data-categories="pepites atypiques">
+        <div class="card-media" data-fallback-icon="icon-leaf">
+          <img src="images/excursions/mamoko.jpg" alt="Île de Nosy Mamoko" loading="lazy">
+          <span class="card-tag">Atypique</span>
+        </div>
+        <div class="card-body">
+          <h3>Nosy Mamoko</h3>
+          <p class="card-meta"><svg width="16" height="16"><use href="#icon-clock"/></svg> Journée complète</p>
+          <p>Tortues terrestres et cascade sur la grande terre : une excursion atypique, loin des sentiers battus.</p>
+          <div class="card-footer">
+            <span class="price">Tarif sur demande</span>
+            <a href="#" class="btn btn-whatsapp btn-small" data-wa-msg="Bonjour, je suis intéressé(e) par l'excursion à Nosy Mamoko. Pouvez-vous m'indiquer les disponibilités ?">
+              <svg width="16" height="16"><use href="#icon-whatsapp"/></svg><span>Réserver</span>
+            </a>
+          </div>
+        </div>
+      </article>
+
+      <article class="card reveal" id="excursion-iranja" data-categories="aventures">
+        <div class="card-media" data-fallback-icon="icon-compass">
+          <img src="images/excursions/iranja.jpg" alt="Langue de sable de Nosy Iranja" loading="lazy">
+          <span class="card-tag">Aventure</span>
+        </div>
+        <div class="card-body">
+          <h3>Nosy Iranja</h3>
+          <p class="card-meta"><svg width="16" height="16"><use href="#icon-clock"/></svg> Journée complète (départ tôt)</p>
+          <p>Sa langue de sable de 2&nbsp;km entre deux îlots, l'une des plus belles vues de l'archipel : une échappée plus lointaine pour les envies d'aventure.</p>
+          <div class="card-footer">
+            <span class="price">Tarif sur demande</span>
+            <a href="#" class="btn btn-whatsapp btn-small" data-wa-msg="Bonjour, je suis intéressé(e) par l'excursion à Nosy Iranja. Pouvez-vous m'indiquer les disponibilités ?">
+              <svg width="16" height="16"><use href="#icon-whatsapp"/></svg><span>Réserver</span>
+            </a>
+          </div>
+        </div>
+      </article>
+
+      <article class="card reveal" id="excursion-mitsio" data-categories="aventures snorkeling">
+        <div class="card-media" data-fallback-icon="icon-mask">
+          <img src="images/excursions/mitsio.jpg" alt="Archipel de Nosy Mitsio" loading="lazy">
+          <span class="card-tag">Aventure</span>
+        </div>
+        <div class="card-body">
+          <h3>Nosy Mitsio</h3>
+          <p class="card-meta"><svg width="16" height="16"><use href="#icon-clock"/></svg> Journée complète (départ tôt)</p>
+          <p>Un archipel plus au nord aux fonds marins spectaculaires : notre sortie la plus aventureuse, pour une eau exceptionnellement transparente.</p>
+          <div class="card-footer">
+            <span class="price">Tarif sur demande</span>
+            <a href="#" class="btn btn-whatsapp btn-small" data-wa-msg="Bonjour, je suis intéressé(e) par l'excursion à Nosy Mitsio. Pouvez-vous m'indiquer les disponibilités ?">
+              <svg width="16" height="16"><use href="#icon-whatsapp"/></svg><span>Réserver</span>
+            </a>
+          </div>
+        </div>
+      </article>
+
+      <article class="card reveal" id="excursion-coucher-soleil" data-categories="">
         <div class="card-media" data-fallback-icon="icon-sun">
           <img src="images/excursions/coucher-soleil.jpg" alt="Croisière au coucher de soleil au large de Nosy Komba" loading="lazy">
           <span class="card-tag">Fin de journée</span>
@@ -389,7 +468,7 @@
         </div>
       </article>
 
-      <article class="card card-feature reveal" id="excursion-prive">
+      <article class="card card-feature reveal" id="excursion-prive" data-categories="">
         <div class="card-media" data-fallback-icon="icon-boat">
           <img src="images/excursions/prive.jpg" alt="Excursion privée en bateau autour de Nosy Komba" loading="lazy">
           <span class="card-tag">Sur-mesure</span>
@@ -410,6 +489,25 @@
         </div>
       </article>
 
+    </div>
+  </div>
+</section>
+
+<!-- ===================== PROFIL PÊCHEUR ===================== -->
+<section class="section section-alt">
+  <div class="container">
+    <div class="profile-banner reveal">
+      <div class="profile-banner-icon">
+        <svg width="28" height="28"><use href="#icon-fish"/></svg>
+      </div>
+      <div class="profile-banner-copy">
+        <p class="eyebrow">Vous êtes plutôt…</p>
+        <h3>Profil pêcheur&nbsp;?</h3>
+        <p>Envie de lancer la ligne et de ramener votre propre poisson du jour ? Embarquez pour une sortie pêche traditionnelle avec l'équipage, entre deux mouillages.</p>
+      </div>
+      <a href="#" class="btn btn-whatsapp btn-small" data-wa-msg="Bonjour Meli Évasion, le profil pêcheur me correspond bien ! Pouvez-vous m'en dire plus sur une sortie pêche avec vous ?">
+        <svg width="16" height="16"><use href="#icon-whatsapp"/></svg><span>Je réserve</span>
+      </a>
     </div>
   </div>
 </section>
