@@ -395,6 +395,71 @@ section[id], .card[id] { scroll-margin-top: var(--header-h); }
 .edito-card h3 { font-size: 1.1rem; }
 .edito-card p { font-size: .92rem; color: #5a473d; margin: 0; }
 
+/* ===================== Carte interactive ===================== */
+.map-frame {
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-card);
+  border: 1px solid rgba(111,43,39,.12);
+}
+#excursion-map {
+  height: 480px;
+  width: 100%;
+  background: var(--color-cream-alt);
+  font-family: var(--font-body);
+}
+.map-note {
+  text-align: center;
+  font-size: .82rem;
+  color: #8a7a6d;
+  margin: 16px 0 0;
+}
+.map-pin-wrap { background: none; border: none; }
+.map-pin {
+  display: flex; align-items: center; justify-content: center;
+  width: 38px; height: 38px;
+  border-radius: 50%;
+  background: var(--color-lagoon);
+  color: #fff;
+  box-shadow: 0 6px 14px -4px rgba(3,18,19,.55), 0 0 0 3px rgba(250,245,240,.9);
+  transition: transform .18s ease;
+}
+.leaflet-marker-icon:hover .map-pin { transform: scale(1.1); }
+.leaflet-popup-content-wrapper {
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-soft);
+}
+.leaflet-popup-content { margin: 16px 18px; width: 220px !important; }
+.map-popup-tag {
+  display: inline-block;
+  font-size: .68rem; font-weight: 600; letter-spacing: .04em;
+  color: var(--color-lagoon-dark);
+  background: var(--color-cream-alt);
+  padding: 3px 9px;
+  border-radius: 999px;
+  margin-bottom: .5em;
+}
+.map-popup h3 {
+  font-size: 1.05rem;
+  color: var(--color-maroon-dark);
+  margin: 0 0 .3em;
+}
+.map-popup-meta { font-size: .78rem; color: var(--color-lagoon); font-weight: 500; margin: 0 0 .5em; }
+.map-popup p:not(.map-popup-meta) { font-size: .85rem; color: #5a473d; margin: 0 0 .7em; }
+.map-popup-footer {
+  display: flex; align-items: center; justify-content: space-between;
+  gap: 10px; margin-bottom: .6em;
+}
+.map-popup-price { font-family: var(--font-display); font-weight: 700; font-size: .92rem; color: var(--color-maroon-dark); }
+.map-popup .btn-small { padding: .5em .9em; font-size: .78rem; }
+.map-popup-more {
+  display: block;
+  font-size: .78rem;
+  color: var(--color-lagoon-dark);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
 /* ===================== Notre histoire ===================== */
 .split-layout {
   display: grid;
@@ -713,6 +778,7 @@ section[id], .card[id] { scroll-margin-top: var(--header-h); }
 }
 
 @media (max-width: 760px) {
+  #excursion-map { height: 360px; }
   .main-nav { display: none; }
   .nav-toggle { display: flex; }
   .header-cta span { display: none; }

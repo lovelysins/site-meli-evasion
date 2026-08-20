@@ -22,6 +22,8 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+
 <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -271,6 +273,21 @@
         <p>Chaque sortie peut être ajustée ou privatisée : à vous de composer votre journée idéale autour de Nosy Komba.</p>
       </article>
     </div>
+  </div>
+</section>
+
+<!-- ===================== CARTE INTERACTIVE ===================== -->
+<section class="section section-alt" id="carte">
+  <div class="container">
+    <div class="section-head reveal">
+      <p class="eyebrow">Où partir</p>
+      <h2>La carte de vos évasions</h2>
+      <p class="section-lead">Cliquez sur un repère pour découvrir l'excursion, sa durée, son tarif indicatif et réserver directement.</p>
+    </div>
+    <div class="map-frame reveal">
+      <div id="excursion-map"></div>
+    </div>
+    <p class="map-note">Positions indicatives — les points de rendez-vous précis vous sont communiqués lors de la confirmation de réservation.</p>
   </div>
 </section>
 
@@ -658,6 +675,7 @@
   <svg width="30" height="30"><use href="#icon-whatsapp"/></svg>
 </a>
 
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 <script src="js/main.js"></script>
 </body>
 </html>

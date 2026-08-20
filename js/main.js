@@ -122,6 +122,111 @@
     });
   }
 
+  /* ---------- Carte interactive des excursions ---------- */
+  var EXCURSIONS_MAP_DATA = [
+    {
+      coords: [-13.4828, 48.2367],
+      icon: "icon-mask",
+      tag: "Journée complète",
+      title: "Nosy Komba & Tanikely",
+      meta: "Environ 6 à 7 heures",
+      desc: "Snorkeling dans la réserve marine de Tanikely, visite du village et du parc à lémuriens.",
+      price: "à partir de 70 €/pers.",
+      anchor: "#excursion-tanikely",
+      waMsg: "Bonjour, je suis intéressé(e) par l'excursion Nosy Komba & Tanikely (journée complète). Pouvez-vous m'indiquer les disponibilités ?"
+    },
+    {
+      coords: [-13.4667, 48.355],
+      icon: "icon-compass",
+      tag: "Demi-journée",
+      title: "Rencontre avec les lémuriens",
+      meta: "Environ 3 heures",
+      desc: "Balade dans la réserve communautaire, observation des lémuriens en semi-liberté.",
+      price: "à partir de 35 €/pers.",
+      anchor: "#excursion-lemuriens",
+      waMsg: "Bonjour, je suis intéressé(e) par l'excursion Rencontre avec les lémuriens (demi-journée). Pouvez-vous m'indiquer les disponibilités ?"
+    },
+    {
+      coords: [-13.475, 48.295],
+      icon: "icon-mask",
+      tag: "Demi-journée",
+      title: "Snorkeling & fonds marins",
+      meta: "Environ 4 heures",
+      desc: "Deux à trois spots de snorkeling autour de l'archipel, matériel fourni.",
+      price: "à partir de 45 €/pers.",
+      anchor: "#excursion-snorkeling",
+      waMsg: "Bonjour, je suis intéressé(e) par l'excursion Snorkeling & fonds marins (demi-journée). Pouvez-vous m'indiquer les disponibilités ?"
+    },
+    {
+      coords: [-13.46, 48.34],
+      icon: "icon-sun",
+      tag: "Fin de journée",
+      title: "Coucher de soleil en mer",
+      meta: "Environ 2 heures",
+      desc: "Sortie courte et conviviale pour profiter du coucher de soleil sur l'océan.",
+      price: "à partir de 30 €/pers.",
+      anchor: "#excursion-coucher-soleil",
+      waMsg: "Bonjour, je suis intéressé(e) par la croisière Coucher de soleil en mer. Pouvez-vous m'indiquer les disponibilités ?"
+    },
+    {
+      coords: [-13.47, 48.35],
+      icon: "icon-boat",
+      tag: "Sur-mesure",
+      title: "Excursion privée sur-mesure",
+      meta: "Durée flexible",
+      desc: "Bateau privatisé et itinéraire personnalisé pour votre groupe.",
+      price: "Tarif sur demande",
+      anchor: "#excursion-prive",
+      waMsg: "Bonjour, je souhaiterais organiser une excursion privée sur-mesure avec Meli Évasion. Pouvez-vous me donner plus d'informations ?"
+    }
+  ];
+
+  function wireExcursionMap() {
+    var mapEl = document.getElementById("excursion-map");
+    if (!mapEl || typeof L === "undefined") return;
+
+    var map = L.map(mapEl, { scrollWheelZoom: false }).setView([-13.472, 48.31], 12);
+
+    L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
+      maxZoom: 17,
+      attribution: '&copy; <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">OpenStreetMap</a>'
+    }).addTo(map);
+
+    EXCURSIONS_MAP_DATA.forEach(function (spot) {
+      var iconHtml =
+        '<span class="map-pin">' +
+        '<svg width="20" height="20"><use href="#' + spot.icon + '"/></svg>' +
+        "</span>";
+      var divIcon = L.divIcon({
+        html: iconHtml,
+        className: "map-pin-wrap",
+        iconSize: [38, 38],
+        iconAnchor: [19, 19],
+        popupAnchor: [0, -16]
+      });
+
+      var waUrl = "https://wa.me/" + WHATSAPP_NUMBER + "?text=" + encodeURIComponent(spot.waMsg);
+      var popupHtml =
+        '<div class="map-popup">' +
+        '<span class="map-popup-tag">' + spot.tag + "</span>" +
+        "<h3>" + spot.title + "</h3>" +
+        '<p class="map-popup-meta">' + spot.meta + "</p>" +
+        "<p>" + spot.desc + "</p>" +
+        '<div class="map-popup-footer">' +
+        '<span class="map-popup-price">' + spot.price + "</span>" +
+        '<a href="' + waUrl + '" target="_blank" rel="noopener" class="btn btn-whatsapp btn-small">' +
+        '<svg width="16" height="16"><use href="#icon-whatsapp"/></svg><span>Je réserve</span>' +
+        "</a>" +
+        "</div>" +
+        '<a href="' + spot.anchor + '" class="map-popup-more">Voir le détail de l’excursion</a>' +
+        "</div>";
+
+      L.marker(spot.coords, { icon: divIcon })
+        .addTo(map)
+        .bindPopup(popupHtml, { closeButton: true, maxWidth: 260 });
+    });
+  }
+
   document.addEventListener("DOMContentLoaded", function () {
     wireWhatsappLinks();
     wireHeaderScroll();
@@ -130,5 +235,6 @@
     wireImageFallbacks();
     wireFooterYear();
     wireCarousels();
+    wireExcursionMap();
   });
 })();
