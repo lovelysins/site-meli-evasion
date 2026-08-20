@@ -1,0 +1,73 @@
+backend:
+  name: git-gateway
+  branch: main
+
+publish_mode: simple
+media_folder: "images/uploads"
+public_folder: "images/uploads"
+
+locale: "fr"
+
+collections:
+  - name: "contenu"
+    label: "Contenu du site"
+    files:
+      - name: "hero"
+        label: "Accueil (titre principal)"
+        file: "content/hero.json"
+        fields:
+          - {label: "Titre principal", name: "title", widget: "string"}
+          - {label: "Texte d'introduction", name: "lead", widget: "text"}
+
+      - name: "histoire"
+        label: "Notre histoire"
+        file: "content/histoire.json"
+        fields:
+          - {label: "Photo de la capitaine", name: "photo", widget: "image", required: false}
+          - {label: "Paragraphe 1", name: "text1", widget: "text"}
+          - {label: "Paragraphe 2", name: "text2", widget: "text"}
+
+      - name: "destinations"
+        label: "Destinations & excursions"
+        file: "content/destinations.json"
+        fields:
+          - name: "items"
+            label: "Destination"
+            widget: "list"
+            summary: "{{title}}"
+            fields:
+              - {label: "Identifiant (ne pas modifier)", name: "id", widget: "string"}
+              - {label: "Photo", name: "photo", widget: "image", required: false}
+              - {label: "Nom de la destination", name: "title", widget: "string"}
+              - {label: "Durée", name: "meta", widget: "string"}
+              - {label: "Description", name: "desc", widget: "text"}
+              - {label: "Tarif affiché", name: "price", widget: "string"}
+
+      - name: "gallery"
+        label: "Galerie photos"
+        file: "content/gallery.json"
+        fields:
+          - name: "items"
+            label: "Photos"
+            widget: "list"
+            field: {label: "Photo", name: "photo", widget: "image"}
+
+      - name: "faq"
+        label: "Questions fréquentes"
+        file: "content/faq.json"
+        fields:
+          - name: "items"
+            label: "Question"
+            widget: "list"
+            summary: "{{q}}"
+            fields:
+              - {label: "Question", name: "q", widget: "string"}
+              - {label: "Réponse", name: "a", widget: "text"}
+
+      - name: "misc"
+        label: "Autres textes"
+        file: "content/misc.json"
+        fields:
+          - {label: "Bandeau « Profil pêcheur »", name: "profil_pecheur_text", widget: "text"}
+          - {label: "Avis clients — titre (en attendant vos vrais avis)", name: "testimonial_title", widget: "string"}
+          - {label: "Avis clients — texte", name: "testimonial_note", widget: "text"}

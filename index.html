@@ -94,8 +94,8 @@
   <div class="container hero-inner">
     <div class="hero-copy reveal">
       <p class="eyebrow">Meli Évasion · Nosy Komba, Madagascar</p>
-      <h1>L'excursion en bateau que vous n'auriez pas trouvée seul.</h1>
-      <p class="hero-lead">
+      <h1 data-cms="hero.title">L'excursion en bateau que vous n'auriez pas trouvée seul.</h1>
+      <p class="hero-lead" data-cms="hero.lead">
         Créez votre sortie en mer avec un capitaine qui vit à Nosy Komba : snorkeling à Tanikely,
         lémuriens, îles secrètes et couchers de soleil, sans intermédiaire ni circuit standardisé.
       </p>
@@ -321,17 +321,17 @@
 
     <div class="card-grid" id="destinations-grid">
 
-      <article class="card reveal" id="excursion-tanikely" data-categories="snorkeling">
+      <article class="card reveal" id="excursion-tanikely" data-categories="snorkeling" data-dest="tanikely">
         <div class="card-media" data-fallback-icon="icon-mask">
-          <img src="images/excursions/tanikely.jpg" alt="Snorkeling à la réserve marine de Tanikely" loading="lazy">
+          <img src="images/excursions/tanikely.jpg" alt="Snorkeling à la réserve marine de Tanikely" loading="lazy" data-cms-field="photo">
           <span class="card-tag">Snorkeling</span>
         </div>
         <div class="card-body">
-          <h3>Nosy Tanikely</h3>
-          <p class="card-meta"><svg width="16" height="16"><use href="#icon-clock"/></svg> Journée ou demi-journée</p>
-          <p>Snorkeling dans la réserve marine de Tanikely : tortues, poissons tropicaux et fonds coralliens protégés.</p>
+          <h3 data-cms-field="title">Nosy Tanikely</h3>
+          <p class="card-meta"><svg width="16" height="16"><use href="#icon-clock"/></svg> <span data-cms-field="meta">Journée ou demi-journée</span></p>
+          <p data-cms-field="desc">Snorkeling dans la réserve marine de Tanikely : tortues, poissons tropicaux et fonds coralliens protégés.</p>
           <div class="card-footer">
-            <span class="price"><small>à partir de</small> 70&nbsp;€ <small>/pers.</small></span>
+            <span class="price" data-cms-field="price">à partir de 70 €/pers.</span>
             <a href="#" class="btn btn-whatsapp btn-small" data-wa-msg="Bonjour, je suis intéressé(e) par l'excursion à Nosy Tanikely. Pouvez-vous m'indiquer les disponibilités ?">
               <svg width="16" height="16"><use href="#icon-whatsapp"/></svg><span>Réserver</span>
             </a>
@@ -339,17 +339,17 @@
         </div>
       </article>
 
-      <article class="card reveal" id="excursion-komba" data-categories="faciles snorkeling">
+      <article class="card reveal" id="excursion-komba" data-categories="faciles snorkeling" data-dest="komba">
         <div class="card-media" data-fallback-icon="icon-compass">
-          <img src="images/excursions/lemuriens.jpg" alt="Village et lémuriens de Nosy Komba" loading="lazy">
+          <img src="images/excursions/lemuriens.jpg" alt="Village et lémuriens de Nosy Komba" loading="lazy" data-cms-field="photo">
           <span class="card-tag">Facile</span>
         </div>
         <div class="card-body">
-          <h3>Tour de Nosy Komba</h3>
-          <p class="card-meta"><svg width="16" height="16"><use href="#icon-clock"/></svg> Demi-journée</p>
-          <p>Village, parc à lémuriens en semi-liberté et spots de snorkeling à deux pas de notre port d'attache.</p>
+          <h3 data-cms-field="title">Tour de Nosy Komba</h3>
+          <p class="card-meta"><svg width="16" height="16"><use href="#icon-clock"/></svg> <span data-cms-field="meta">Demi-journée</span></p>
+          <p data-cms-field="desc">Village, parc à lémuriens en semi-liberté et spots de snorkeling à deux pas de notre port d'attache.</p>
           <div class="card-footer">
-            <span class="price"><small>à partir de</small> 35&nbsp;€ <small>/pers.</small></span>
+            <span class="price" data-cms-field="price">à partir de 35 €/pers.</span>
             <a href="#" class="btn btn-whatsapp btn-small" data-wa-msg="Bonjour, je suis intéressé(e) par le tour de Nosy Komba. Pouvez-vous m'indiquer les disponibilités ?">
               <svg width="16" height="16"><use href="#icon-whatsapp"/></svg><span>Réserver</span>
             </a>
@@ -357,17 +357,17 @@
         </div>
       </article>
 
-      <article class="card reveal" id="excursion-vorona" data-categories="faciles">
+      <article class="card reveal" id="excursion-vorona" data-categories="faciles" data-dest="vorona">
         <div class="card-media" data-fallback-icon="icon-compass">
-          <img src="images/excursions/vorona.jpg" alt="Île de Nosy Vorona, entre Nosy Be et Nosy Komba" loading="lazy">
+          <img src="images/excursions/vorona.jpg" alt="Île de Nosy Vorona, entre Nosy Be et Nosy Komba" loading="lazy" data-cms-field="photo">
           <span class="card-tag">Facile</span>
         </div>
         <div class="card-body">
-          <h3>Nosy Vorona</h3>
-          <p class="card-meta"><svg width="16" height="16"><use href="#icon-clock"/></svg> Demi-journée</p>
-          <p>Le petit îlot au phare entre Nosy Be et Nosy Komba, sanctuaire d'oiseaux marins — une sortie courte et paisible.</p>
+          <h3 data-cms-field="title">Nosy Vorona</h3>
+          <p class="card-meta"><svg width="16" height="16"><use href="#icon-clock"/></svg> <span data-cms-field="meta">Demi-journée</span></p>
+          <p data-cms-field="desc">Le petit îlot au phare entre Nosy Be et Nosy Komba, sanctuaire d'oiseaux marins — une sortie courte et paisible.</p>
           <div class="card-footer">
-            <span class="price">Tarif sur demande</span>
+            <span class="price" data-cms-field="price">Tarif sur demande</span>
             <a href="#" class="btn btn-whatsapp btn-small" data-wa-msg="Bonjour, je suis intéressé(e) par l'excursion à Nosy Vorona. Pouvez-vous m'indiquer les disponibilités ?">
               <svg width="16" height="16"><use href="#icon-whatsapp"/></svg><span>Réserver</span>
             </a>
@@ -375,17 +375,17 @@
         </div>
       </article>
 
-      <article class="card reveal" id="excursion-fanihy" data-categories="pepites snorkeling atypiques">
+      <article class="card reveal" id="excursion-fanihy" data-categories="pepites snorkeling atypiques" data-dest="fanihy">
         <div class="card-media" data-fallback-icon="icon-mask">
-          <img src="images/excursions/fanihy.jpg" alt="Île de Nosy Fanihy" loading="lazy">
+          <img src="images/excursions/fanihy.jpg" alt="Île de Nosy Fanihy" loading="lazy" data-cms-field="photo">
           <span class="card-tag">Pépite</span>
         </div>
         <div class="card-body">
-          <h3>Nosy Fanihy</h3>
-          <p class="card-meta"><svg width="16" height="16"><use href="#icon-clock"/></svg> Journée complète</p>
-          <p>L'île aux chauves-souris, sauvage et peu fréquentée : plage immaculée, snorkeling et vraie sensation de Robinson Crusoé.</p>
+          <h3 data-cms-field="title">Nosy Fanihy</h3>
+          <p class="card-meta"><svg width="16" height="16"><use href="#icon-clock"/></svg> <span data-cms-field="meta">Journée complète</span></p>
+          <p data-cms-field="desc">L'île aux chauves-souris, sauvage et peu fréquentée : plage immaculée, snorkeling et vraie sensation de Robinson Crusoé.</p>
           <div class="card-footer">
-            <span class="price">Tarif sur demande</span>
+            <span class="price" data-cms-field="price">Tarif sur demande</span>
             <a href="#" class="btn btn-whatsapp btn-small" data-wa-msg="Bonjour, je suis intéressé(e) par l'excursion à Nosy Fanihy. Pouvez-vous m'indiquer les disponibilités ?">
               <svg width="16" height="16"><use href="#icon-whatsapp"/></svg><span>Réserver</span>
             </a>
@@ -393,17 +393,17 @@
         </div>
       </article>
 
-      <article class="card reveal" id="excursion-mamoko" data-categories="pepites atypiques">
+      <article class="card reveal" id="excursion-mamoko" data-categories="pepites atypiques" data-dest="mamoko">
         <div class="card-media" data-fallback-icon="icon-leaf">
-          <img src="images/excursions/mamoko.jpg" alt="Île de Nosy Mamoko" loading="lazy">
+          <img src="images/excursions/mamoko.jpg" alt="Île de Nosy Mamoko" loading="lazy" data-cms-field="photo">
           <span class="card-tag">Atypique</span>
         </div>
         <div class="card-body">
-          <h3>Nosy Mamoko</h3>
-          <p class="card-meta"><svg width="16" height="16"><use href="#icon-clock"/></svg> Journée complète</p>
-          <p>Tortues terrestres et cascade sur la grande terre : une excursion atypique, loin des sentiers battus.</p>
+          <h3 data-cms-field="title">Nosy Mamoko</h3>
+          <p class="card-meta"><svg width="16" height="16"><use href="#icon-clock"/></svg> <span data-cms-field="meta">Journée complète</span></p>
+          <p data-cms-field="desc">Tortues terrestres et cascade sur la grande terre : une excursion atypique, loin des sentiers battus.</p>
           <div class="card-footer">
-            <span class="price">Tarif sur demande</span>
+            <span class="price" data-cms-field="price">Tarif sur demande</span>
             <a href="#" class="btn btn-whatsapp btn-small" data-wa-msg="Bonjour, je suis intéressé(e) par l'excursion à Nosy Mamoko. Pouvez-vous m'indiquer les disponibilités ?">
               <svg width="16" height="16"><use href="#icon-whatsapp"/></svg><span>Réserver</span>
             </a>
@@ -411,17 +411,17 @@
         </div>
       </article>
 
-      <article class="card reveal" id="excursion-iranja" data-categories="aventures">
+      <article class="card reveal" id="excursion-iranja" data-categories="aventures" data-dest="iranja">
         <div class="card-media" data-fallback-icon="icon-compass">
-          <img src="images/excursions/iranja.jpg" alt="Langue de sable de Nosy Iranja" loading="lazy">
+          <img src="images/excursions/iranja.jpg" alt="Langue de sable de Nosy Iranja" loading="lazy" data-cms-field="photo">
           <span class="card-tag">Aventure</span>
         </div>
         <div class="card-body">
-          <h3>Nosy Iranja</h3>
-          <p class="card-meta"><svg width="16" height="16"><use href="#icon-clock"/></svg> Journée complète (départ tôt)</p>
-          <p>Sa langue de sable de 2&nbsp;km entre deux îlots, l'une des plus belles vues de l'archipel : une échappée plus lointaine pour les envies d'aventure.</p>
+          <h3 data-cms-field="title">Nosy Iranja</h3>
+          <p class="card-meta"><svg width="16" height="16"><use href="#icon-clock"/></svg> <span data-cms-field="meta">Journée complète (départ tôt)</span></p>
+          <p data-cms-field="desc">Sa langue de sable de 2&nbsp;km entre deux îlots, l'une des plus belles vues de l'archipel : une échappée plus lointaine pour les envies d'aventure.</p>
           <div class="card-footer">
-            <span class="price">Tarif sur demande</span>
+            <span class="price" data-cms-field="price">Tarif sur demande</span>
             <a href="#" class="btn btn-whatsapp btn-small" data-wa-msg="Bonjour, je suis intéressé(e) par l'excursion à Nosy Iranja. Pouvez-vous m'indiquer les disponibilités ?">
               <svg width="16" height="16"><use href="#icon-whatsapp"/></svg><span>Réserver</span>
             </a>
@@ -429,17 +429,17 @@
         </div>
       </article>
 
-      <article class="card reveal" id="excursion-mitsio" data-categories="aventures snorkeling">
+      <article class="card reveal" id="excursion-mitsio" data-categories="aventures snorkeling" data-dest="mitsio">
         <div class="card-media" data-fallback-icon="icon-mask">
-          <img src="images/excursions/mitsio.jpg" alt="Archipel de Nosy Mitsio" loading="lazy">
+          <img src="images/excursions/mitsio.jpg" alt="Archipel de Nosy Mitsio" loading="lazy" data-cms-field="photo">
           <span class="card-tag">Aventure</span>
         </div>
         <div class="card-body">
-          <h3>Nosy Mitsio</h3>
-          <p class="card-meta"><svg width="16" height="16"><use href="#icon-clock"/></svg> Journée complète (départ tôt)</p>
-          <p>Un archipel plus au nord aux fonds marins spectaculaires : notre sortie la plus aventureuse, pour une eau exceptionnellement transparente.</p>
+          <h3 data-cms-field="title">Nosy Mitsio</h3>
+          <p class="card-meta"><svg width="16" height="16"><use href="#icon-clock"/></svg> <span data-cms-field="meta">Journée complète (départ tôt)</span></p>
+          <p data-cms-field="desc">Un archipel plus au nord aux fonds marins spectaculaires : notre sortie la plus aventureuse, pour une eau exceptionnellement transparente.</p>
           <div class="card-footer">
-            <span class="price">Tarif sur demande</span>
+            <span class="price" data-cms-field="price">Tarif sur demande</span>
             <a href="#" class="btn btn-whatsapp btn-small" data-wa-msg="Bonjour, je suis intéressé(e) par l'excursion à Nosy Mitsio. Pouvez-vous m'indiquer les disponibilités ?">
               <svg width="16" height="16"><use href="#icon-whatsapp"/></svg><span>Réserver</span>
             </a>
@@ -447,20 +447,20 @@
         </div>
       </article>
 
-      <article class="card reveal" id="excursion-coucher-soleil" data-categories="">
+      <article class="card reveal" id="excursion-coucher-soleil" data-categories="" data-dest="coucher-soleil">
         <div class="card-media" data-fallback-icon="icon-sun">
-          <img src="images/excursions/coucher-soleil.jpg" alt="Croisière au coucher de soleil au large de Nosy Komba" loading="lazy">
+          <img src="images/excursions/coucher-soleil.jpg" alt="Croisière au coucher de soleil au large de Nosy Komba" loading="lazy" data-cms-field="photo">
           <span class="card-tag">Fin de journée</span>
         </div>
         <div class="card-body">
-          <h3>Coucher de soleil en mer</h3>
-          <p class="card-meta"><svg width="16" height="16"><use href="#icon-clock"/></svg> Environ 2 heures</p>
-          <p>
+          <h3 data-cms-field="title">Coucher de soleil en mer</h3>
+          <p class="card-meta"><svg width="16" height="16"><use href="#icon-clock"/></svg> <span data-cms-field="meta">Environ 2 heures</span></p>
+          <p data-cms-field="desc">
             Une sortie courte et conviviale en fin de journée pour profiter du coucher de soleil sur l'océan,
             boissons à bord.
           </p>
           <div class="card-footer">
-            <span class="price"><small>à partir de</small> 30&nbsp;€ <small>/pers.</small></span>
+            <span class="price" data-cms-field="price">à partir de 30 €/pers.</span>
             <a href="#" class="btn btn-whatsapp btn-small" data-wa-msg="Bonjour, je suis intéressé(e) par la croisière Coucher de soleil en mer. Pouvez-vous m'indiquer les disponibilités ?">
               <svg width="16" height="16"><use href="#icon-whatsapp"/></svg><span>Réserver</span>
             </a>
@@ -468,20 +468,20 @@
         </div>
       </article>
 
-      <article class="card card-feature reveal" id="excursion-prive" data-categories="">
+      <article class="card card-feature reveal" id="excursion-prive" data-categories="" data-dest="prive">
         <div class="card-media" data-fallback-icon="icon-boat">
-          <img src="images/excursions/prive.jpg" alt="Excursion privée en bateau autour de Nosy Komba" loading="lazy">
+          <img src="images/excursions/prive.jpg" alt="Excursion privée en bateau autour de Nosy Komba" loading="lazy" data-cms-field="photo">
           <span class="card-tag">Sur-mesure</span>
         </div>
         <div class="card-body">
-          <h3>Excursion privée sur-mesure</h3>
-          <p class="card-meta"><svg width="16" height="16"><use href="#icon-clock"/></svg> Durée flexible</p>
-          <p>
+          <h3 data-cms-field="title">Excursion privée sur-mesure</h3>
+          <p class="card-meta"><svg width="16" height="16"><use href="#icon-clock"/></svg> <span data-cms-field="meta">Durée flexible</span></p>
+          <p data-cms-field="desc">
             Bateau privatisé et itinéraire personnalisé pour les familles, groupes d'amis ou occasions
             spéciales : vous composez votre journée idéale autour de Nosy Komba.
           </p>
           <div class="card-footer">
-            <span class="price">Tarif sur demande</span>
+            <span class="price" data-cms-field="price">Tarif sur demande</span>
             <a href="#" class="btn btn-whatsapp btn-small" data-wa-msg="Bonjour, je souhaiterais organiser une excursion privée sur-mesure avec Meli Évasion. Pouvez-vous me donner plus d'informations ?">
               <svg width="16" height="16"><use href="#icon-whatsapp"/></svg><span>En discuter</span>
             </a>
@@ -503,7 +503,7 @@
       <div class="profile-banner-copy">
         <p class="eyebrow">Vous êtes plutôt…</p>
         <h3>Profil pêcheur&nbsp;?</h3>
-        <p>Envie de lancer la ligne et de ramener votre propre poisson du jour ? Embarquez pour une sortie pêche traditionnelle avec l'équipage, entre deux mouillages.</p>
+        <p data-cms="misc.profil_pecheur_text">Envie de lancer la ligne et de ramener votre propre poisson du jour ? Embarquez pour une sortie pêche traditionnelle avec l'équipage, entre deux mouillages.</p>
       </div>
       <a href="#" class="btn btn-whatsapp btn-small" data-wa-msg="Bonjour Meli Évasion, le profil pêcheur me correspond bien ! Pouvez-vous m'en dire plus sur une sortie pêche avec vous ?">
         <svg width="16" height="16"><use href="#icon-whatsapp"/></svg><span>Je réserve</span>
@@ -517,19 +517,18 @@
   <div class="container split-layout">
     <div class="split-visual reveal">
       <div class="photo-frame" data-fallback-icon="icon-boat">
-        <img src="images/histoire-capitaine.jpg" alt="Mirana Andrianarisoa, fondatrice et capitaine de Meli Évasion" loading="lazy">
+        <img src="images/histoire-capitaine.jpg" alt="Mirana Andrianarisoa, fondatrice et capitaine de Meli Évasion" loading="lazy" data-cms="histoire.photo">
       </div>
     </div>
     <div class="split-copy reveal">
       <p class="eyebrow">Notre histoire</p>
       <h2>Notre ancrage, c'est Nosy Komba</h2>
-      <!-- CONTENU GÉNÉRIQUE : à ajuster avec Mirana -->
-      <p>
+      <p data-cms="histoire.text1" data-cms-html="1">
         Meli Évasion est une micro-entreprise fondée et capitainée par <strong>Mirana Andrianarisoa</strong>,
         basée à Nosy Komba. Ici, chaque sortie en mer est pensée comme une invitation à découvrir
         l'archipel autrement : sans intermédiaire, à taille humaine, avec celles et ceux qui y vivent au quotidien.
       </p>
-      <p>
+      <p data-cms="histoire.text2">
         Pas de grands groupes anonymes ni de circuits standardisés : un bateau, un équipage qui connaît
         chaque recoin de la côte, et une attention particulière portée à la sécurité comme à l'authenticité
         de chaque excursion.
@@ -587,8 +586,8 @@
 
     <!-- Emplacement prêt pour vos vrais avis clients : remplacez cette carte par vos témoignages. -->
     <div class="testimonial-placeholder reveal">
-      <p>Vos avis clients apparaîtront ici.</p>
-      <span>Dès que vous avez des retours (WhatsApp, Google, TripAdvisor…), envoyez-les-moi et je les intègre à cet emplacement.</span>
+      <p data-cms="misc.testimonial_title">Vos avis clients apparaîtront ici.</p>
+      <span data-cms="misc.testimonial_note">Dès que vous avez des retours (WhatsApp, Google, TripAdvisor…), envoyez-les-moi et je les intègre à cet emplacement.</span>
     </div>
   </div>
 </section>
@@ -641,12 +640,12 @@
     </div>
 
     <div class="gallery-grid">
-      <div class="gallery-item reveal" data-fallback-icon="icon-boat"><img src="images/galerie/photo-1.jpg" alt="Bateau de Meli Évasion" loading="lazy"></div>
-      <div class="gallery-item reveal" data-fallback-icon="icon-mask"><img src="images/galerie/photo-2.jpg" alt="Crique turquoise de Nosy Komba" loading="lazy"></div>
-      <div class="gallery-item reveal" data-fallback-icon="icon-compass"><img src="images/galerie/photo-3.jpg" alt="Lémurien de Nosy Komba" loading="lazy"></div>
-      <div class="gallery-item reveal" data-fallback-icon="icon-sun"><img src="images/galerie/photo-4.jpg" alt="Coucher de soleil depuis le bateau" loading="lazy"></div>
-      <div class="gallery-item reveal" data-fallback-icon="icon-pin"><img src="images/galerie/photo-5.jpg" alt="Île de l'archipel de Nosy Be" loading="lazy"></div>
-      <div class="gallery-item reveal" data-fallback-icon="icon-people"><img src="images/galerie/photo-6.jpg" alt="Groupe en excursion avec Meli Évasion" loading="lazy"></div>
+      <div class="gallery-item reveal" data-fallback-icon="icon-boat"><img src="images/galerie/photo-1.jpg" alt="Bateau de Meli Évasion" loading="lazy" data-gallery="0"></div>
+      <div class="gallery-item reveal" data-fallback-icon="icon-mask"><img src="images/galerie/photo-2.jpg" alt="Crique turquoise de Nosy Komba" loading="lazy" data-gallery="1"></div>
+      <div class="gallery-item reveal" data-fallback-icon="icon-compass"><img src="images/galerie/photo-3.jpg" alt="Lémurien de Nosy Komba" loading="lazy" data-gallery="2"></div>
+      <div class="gallery-item reveal" data-fallback-icon="icon-sun"><img src="images/galerie/photo-4.jpg" alt="Coucher de soleil depuis le bateau" loading="lazy" data-gallery="3"></div>
+      <div class="gallery-item reveal" data-fallback-icon="icon-pin"><img src="images/galerie/photo-5.jpg" alt="Île de l'archipel de Nosy Be" loading="lazy" data-gallery="4"></div>
+      <div class="gallery-item reveal" data-fallback-icon="icon-people"><img src="images/galerie/photo-6.jpg" alt="Groupe en excursion avec Meli Évasion" loading="lazy" data-gallery="5"></div>
     </div>
   </div>
 </section>
@@ -663,34 +662,34 @@
       </div>
 
       <div class="faq-list">
-        <details class="faq-item reveal" open>
-          <summary>Comment réserver une excursion ?</summary>
-          <p>Le plus simple est de nous écrire directement sur WhatsApp : indiquez la date souhaitée, le nombre
+        <details class="faq-item reveal" open data-faq="0">
+          <summary data-cms-field="q">Comment réserver une excursion ?</summary>
+          <p data-cms-field="a">Le plus simple est de nous écrire directement sur WhatsApp : indiquez la date souhaitée, le nombre
             de personnes et l'excursion qui vous intéresse. Nous confirmons la disponibilité et le tarif rapidement.</p>
         </details>
-        <details class="faq-item reveal">
-          <summary>Faut-il savoir bien nager pour le snorkeling ?</summary>
-          <p>Un niveau de base suffit. Des gilets et du matériel adapté sont fournis, et l'encadrement s'ajuste
+        <details class="faq-item reveal" data-faq="1">
+          <summary data-cms-field="q">Faut-il savoir bien nager pour le snorkeling ?</summary>
+          <p data-cms-field="a">Un niveau de base suffit. Des gilets et du matériel adapté sont fournis, et l'encadrement s'ajuste
             au niveau de chacun.</p>
         </details>
-        <details class="faq-item reveal">
-          <summary>Que se passe-t-il en cas de mauvais temps ?</summary>
-          <p>La sécurité prime toujours : en cas de conditions météo défavorables, l'excursion peut être
+        <details class="faq-item reveal" data-faq="2">
+          <summary data-cms-field="q">Que se passe-t-il en cas de mauvais temps ?</summary>
+          <p data-cms-field="a">La sécurité prime toujours : en cas de conditions météo défavorables, l'excursion peut être
             reportée ou son itinéraire adapté, en concertation avec vous.</p>
         </details>
-        <details class="faq-item reveal">
-          <summary>Combien de personnes participent à une sortie ?</summary>
-          <p>Nous privilégions les petits groupes pour une expérience plus qualitative. Une privatisation
+        <details class="faq-item reveal" data-faq="3">
+          <summary data-cms-field="q">Combien de personnes participent à une sortie ?</summary>
+          <p data-cms-field="a">Nous privilégions les petits groupes pour une expérience plus qualitative. Une privatisation
             complète du bateau est également possible sur demande.</p>
         </details>
-        <details class="faq-item reveal">
-          <summary>D'où partent les excursions ?</summary>
-          <p>Les départs se font depuis Nosy Komba ; le point d'embarquement exact vous sera précisé lors
+        <details class="faq-item reveal" data-faq="4">
+          <summary data-cms-field="q">D'où partent les excursions ?</summary>
+          <p data-cms-field="a">Les départs se font depuis Nosy Komba ; le point d'embarquement exact vous sera précisé lors
             de la confirmation de réservation.</p>
         </details>
-        <details class="faq-item reveal">
-          <summary>Comment se passe le paiement ?</summary>
-          <p>Les modalités de paiement (acompte, solde, moyens acceptés) sont précisées directement lors
+        <details class="faq-item reveal" data-faq="5">
+          <summary data-cms-field="q">Comment se passe le paiement ?</summary>
+          <p data-cms-field="a">Les modalités de paiement (acompte, solde, moyens acceptés) sont précisées directement lors
             de l'échange sur WhatsApp.</p>
         </details>
       </div>

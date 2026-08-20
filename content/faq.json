@@ -1,0 +1,28 @@
+{
+  "items": [
+    {
+      "q": "Comment réserver une excursion ?",
+      "a": "Le plus simple est de nous écrire directement sur WhatsApp : indiquez la date souhaitée, le nombre de personnes et l'excursion qui vous intéresse. Nous confirmons la disponibilité et le tarif rapidement."
+    },
+    {
+      "q": "Faut-il savoir bien nager pour le snorkeling ?",
+      "a": "Un niveau de base suffit. Des gilets et du matériel adapté sont fournis, et l'encadrement s'ajuste au niveau de chacun."
+    },
+    {
+      "q": "Que se passe-t-il en cas de mauvais temps ?",
+      "a": "La sécurité prime toujours : en cas de conditions météo défavorables, l'excursion peut être reportée ou son itinéraire adapté, en concertation avec vous."
+    },
+    {
+      "q": "Combien de personnes participent à une sortie ?",
+      "a": "Nous privilégions les petits groupes pour une expérience plus qualitative. Une privatisation complète du bateau est également possible sur demande."
+    },
+    {
+      "q": "D'où partent les excursions ?",
+      "a": "Les départs se font depuis Nosy Komba ; le point d'embarquement exact vous sera précisé lors de la confirmation de réservation."
+    },
+    {
+      "q": "Comment se passe le paiement ?",
+      "a": "Les modalités de paiement (acompte, solde, moyens acceptés) sont précisées directement lors de l'échange sur WhatsApp."
+    }
+  ]
+}

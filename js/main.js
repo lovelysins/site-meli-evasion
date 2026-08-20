@@ -292,7 +292,85 @@
     });
   }
 
+  /* ---------- Contenu éditable via le panneau d'administration (/admin) ----------
+     Les fichiers content/*.json sont éditables sans code via Decap CMS.
+     Si un fichier est absent ou vide, le texte déjà présent dans le HTML reste
+     affiché tel quel : ce script ne fait que le remplacer quand une valeur existe. */
+  function setCmsText(root, selector, value, isHtml) {
+    if (!value) return;
+    var el = root.querySelector(selector);
+    if (!el) return;
+    if (isHtml) el.innerHTML = value;
+    else el.textContent = value;
+  }
+
+  function setCmsImg(root, selector, value) {
+    if (!value) return;
+    var el = root.querySelector(selector);
+    if (el) el.src = value;
+  }
+
+  function applyContentOverlay(data) {
+    if (data.hero) {
+      setCmsText(document, "[data-cms='hero.title']", data.hero.title);
+      setCmsText(document, "[data-cms='hero.lead']", data.hero.lead);
+    }
+    if (data.histoire) {
+      setCmsImg(document, "[data-cms='histoire.photo']", data.histoire.photo);
+      var text1El = document.querySelector("[data-cms='histoire.text1']");
+      if (text1El && data.histoire.text1) text1El.innerHTML = data.histoire.text1;
+      setCmsText(document, "[data-cms='histoire.text2']", data.histoire.text2);
+    }
+    if (data.destinations && data.destinations.items) {
+      data.destinations.items.forEach(function (item) {
+        if (!item || !item.id) return;
+        var card = document.querySelector('[data-dest="' + item.id + '"]');
+        if (!card) return;
+        setCmsImg(card, '[data-cms-field="photo"]', item.photo);
+        setCmsText(card, '[data-cms-field="title"]', item.title);
+        setCmsText(card, '[data-cms-field="meta"]', item.meta);
+        setCmsText(card, '[data-cms-field="desc"]', item.desc);
+        setCmsText(card, '[data-cms-field="price"]', item.price);
+      });
+    }
+    if (data.gallery && data.gallery.items) {
+      data.gallery.items.forEach(function (entry, i) {
+        var img = document.querySelector('[data-gallery="' + i + '"]');
+        if (img && entry && entry.photo) img.src = entry.photo;
+      });
+    }
+    if (data.faq && data.faq.items) {
+      data.faq.items.forEach(function (entry, i) {
+        var item = document.querySelector('[data-faq="' + i + '"]');
+        if (!item || !entry) return;
+        setCmsText(item, '[data-cms-field="q"]', entry.q);
+        setCmsText(item, '[data-cms-field="a"]', entry.a);
+      });
+    }
+    if (data.misc) {
+      setCmsText(document, "[data-cms='misc.profil_pecheur_text']", data.misc.profil_pecheur_text);
+      setCmsText(document, "[data-cms='misc.testimonial_title']", data.misc.testimonial_title);
+      setCmsText(document, "[data-cms='misc.testimonial_note']", data.misc.testimonial_note);
+    }
+  }
+
+  function wireContentOverlay() {
+    var files = ["hero", "histoire", "destinations", "gallery", "faq", "misc"];
+    Promise.all(
+      files.map(function (name) {
+        return fetch("content/" + name + ".json", { cache: "no-store" })
+          .then(function (r) { return r.ok ? r.json() : null; })
+          .catch(function () { return null; });
+      })
+    ).then(function (results) {
+      var data = {};
+      files.forEach(function (name, i) { if (results[i]) data[name] = results[i]; });
+      applyContentOverlay(data);
+    });
+  }
+
   document.addEventListener("DOMContentLoaded", function () {
+    wireContentOverlay();
     wireWhatsappLinks();
     wireHeaderScroll();
     wireMobileNav();

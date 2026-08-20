@@ -571,7 +571,6 @@ section[id], .card[id] { scroll-margin-top: var(--header-h); }
   border-top: 1px solid #eee2d4;
 }
 .price { font-family: var(--font-display); font-weight: 700; color: var(--color-maroon-dark); font-size: 1.05rem; }
-.price small { font-family: var(--font-body); font-weight: 400; font-size: .68rem; color: #8a7a6d; }
 
 /* ===================== Confiance / mockup WhatsApp ===================== */
 .confidence { background: var(--color-abyss); color: #fff; padding: 96px 0; }

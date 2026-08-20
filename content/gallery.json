@@ -1,0 +1,10 @@
+{
+  "items": [
+    { "photo": "images/galerie/photo-1.jpg" },
+    { "photo": "images/galerie/photo-2.jpg" },
+    { "photo": "images/galerie/photo-3.jpg" },
+    { "photo": "images/galerie/photo-4.jpg" },
+    { "photo": "images/galerie/photo-5.jpg" },
+    { "photo": "images/galerie/photo-6.jpg" }
+  ]
+}
