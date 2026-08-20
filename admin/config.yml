@@ -39,9 +39,24 @@ collections:
             widget: "list"
             summary: "{{title}}"
             fields:
-              - {label: "Identifiant (ne pas modifier)", name: "id", widget: "string"}
+              - label: "Identifiant unique (minuscules, sans espace, ex. nosy-x)"
+                name: "id"
+                widget: "string"
+                hint: "Sert de lien direct vers cette carte. Ne le changez plus une fois publié."
               - {label: "Photo", name: "photo", widget: "image", required: false}
               - {label: "Nom de la destination", name: "title", widget: "string"}
+              - {label: "Étiquette affichée sur la photo (ex. Pépite, Facile)", name: "tag", widget: "string", required: false}
+              - label: "Catégories (pour les filtres)"
+                name: "categories"
+                widget: "select"
+                multiple: true
+                required: false
+                options:
+                  - {label: "Pépites", value: "pepites"}
+                  - {label: "Aventures", value: "aventures"}
+                  - {label: "Faciles", value: "faciles"}
+                  - {label: "Snorkeling", value: "snorkeling"}
+                  - {label: "Atypiques", value: "atypiques"}
               - {label: "Durée", name: "meta", widget: "string"}
               - {label: "Description", name: "desc", widget: "text"}
               - {label: "Tarif affiché", name: "price", widget: "string"}

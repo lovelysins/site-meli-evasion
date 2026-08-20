@@ -4,6 +4,10 @@
       "id": "tanikely",
       "photo": "images/excursions/tanikely.jpg",
       "title": "Nosy Tanikely",
+      "tag": "Snorkeling",
+      "categories": [
+        "snorkeling"
+      ],
       "meta": "Journée ou demi-journée",
       "desc": "Snorkeling dans la réserve marine de Tanikely : tortues, poissons tropicaux et fonds coralliens protégés.",
       "price": "à partir de 70 €/pers."
@@ -12,6 +16,11 @@
       "id": "komba",
       "photo": "images/excursions/lemuriens.jpg",
       "title": "Tour de Nosy Komba",
+      "tag": "Facile",
+      "categories": [
+        "faciles",
+        "snorkeling"
+      ],
       "meta": "Demi-journée",
       "desc": "Village, parc à lémuriens en semi-liberté et spots de snorkeling à deux pas de notre port d'attache.",
       "price": "à partir de 35 €/pers."
@@ -20,6 +29,10 @@
       "id": "vorona",
       "photo": "images/excursions/vorona.jpg",
       "title": "Nosy Vorona",
+      "tag": "Facile",
+      "categories": [
+        "faciles"
+      ],
       "meta": "Demi-journée",
       "desc": "Le petit îlot au phare entre Nosy Be et Nosy Komba, sanctuaire d'oiseaux marins — une sortie courte et paisible.",
       "price": "Tarif sur demande"
@@ -28,6 +41,12 @@
       "id": "fanihy",
       "photo": "images/excursions/fanihy.jpg",
       "title": "Nosy Fanihy",
+      "tag": "Pépite",
+      "categories": [
+        "pepites",
+        "snorkeling",
+        "atypiques"
+      ],
       "meta": "Journée complète",
       "desc": "L'île aux chauves-souris, sauvage et peu fréquentée : plage immaculée, snorkeling et vraie sensation de Robinson Crusoé.",
       "price": "Tarif sur demande"
@@ -36,6 +55,11 @@
       "id": "mamoko",
       "photo": "images/excursions/mamoko.jpg",
       "title": "Nosy Mamoko",
+      "tag": "Atypique",
+      "categories": [
+        "pepites",
+        "atypiques"
+      ],
       "meta": "Journée complète",
       "desc": "Tortues terrestres et cascade sur la grande terre : une excursion atypique, loin des sentiers battus.",
       "price": "Tarif sur demande"
@@ -44,6 +68,10 @@
       "id": "iranja",
       "photo": "images/excursions/iranja.jpg",
       "title": "Nosy Iranja",
+      "tag": "Aventure",
+      "categories": [
+        "aventures"
+      ],
       "meta": "Journée complète (départ tôt)",
       "desc": "Sa langue de sable de 2 km entre deux îlots, l'une des plus belles vues de l'archipel : une échappée plus lointaine pour les envies d'aventure.",
       "price": "Tarif sur demande"
@@ -52,6 +80,11 @@
       "id": "mitsio",
       "photo": "images/excursions/mitsio.jpg",
       "title": "Nosy Mitsio",
+      "tag": "Aventure",
+      "categories": [
+        "aventures",
+        "snorkeling"
+      ],
       "meta": "Journée complète (départ tôt)",
       "desc": "Un archipel plus au nord aux fonds marins spectaculaires : notre sortie la plus aventureuse, pour une eau exceptionnellement transparente.",
       "price": "Tarif sur demande"
@@ -60,6 +93,8 @@
       "id": "coucher-soleil",
       "photo": "images/excursions/coucher-soleil.jpg",
       "title": "Coucher de soleil en mer",
+      "tag": "Fin de journée",
+      "categories": [],
       "meta": "Environ 2 heures",
       "desc": "Une sortie courte et conviviale en fin de journée pour profiter du coucher de soleil sur l'océan, boissons à bord.",
       "price": "à partir de 30 €/pers."
@@ -68,6 +103,8 @@
       "id": "prive",
       "photo": "images/excursions/prive.jpg",
       "title": "Excursion privée sur-mesure",
+      "tag": "Sur-mesure",
+      "categories": [],
       "meta": "Durée flexible",
       "desc": "Bateau privatisé et itinéraire personnalisé pour les familles, groupes d'amis ou occasions spéciales : vous composez votre journée idéale autour de Nosy Komba.",
       "price": "Tarif sur demande"

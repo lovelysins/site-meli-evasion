@@ -274,14 +274,16 @@
   /* ---------- Filtres de destinations (Pépites, Aventures, Faciles...) ---------- */
   function wireDestinationFilters() {
     var buttons = document.querySelectorAll(".dest-filter");
-    var cards = document.querySelectorAll("[data-categories]");
-    if (!buttons.length || !cards.length) return;
+    if (!buttons.length) return;
 
     buttons.forEach(function (btn) {
       btn.addEventListener("click", function () {
         buttons.forEach(function (b) { b.classList.remove("is-active"); });
         btn.classList.add("is-active");
         var filter = btn.getAttribute("data-filter");
+        // Requête faite au moment du clic (pas mise en cache) : reste valable
+        // même si les cartes ont été recréées par le rendu dynamique du CMS.
+        var cards = document.querySelectorAll("[data-categories]");
         cards.forEach(function (card) {
           var cats = (card.getAttribute("data-categories") || "").split(" ");
           var show = filter === "toutes" || cats.indexOf(filter) !== -1;
@@ -310,6 +312,73 @@
     if (el) el.src = value;
   }
 
+  function escapeHtml(str) {
+    if (str == null) return "";
+    return String(str)
+      .replace(/&/g, "&amp;")
+      .replace(/</g, "&lt;")
+      .replace(/>/g, "&gt;")
+      .replace(/"/g, "&quot;");
+  }
+
+  /* ---------- Rendu dynamique (permet le vrai ajout/suppression via le CMS) ---------- */
+  function renderDestinations(items) {
+    var grid = document.getElementById("destinations-grid");
+    if (!grid || !items || !items.length) return;
+    grid.innerHTML = items.map(function (item) {
+      if (!item || !item.id) return "";
+      var cats = Array.isArray(item.categories) ? item.categories.join(" ") : (item.categories || "");
+      var waMsg = "Bonjour, je suis intéressé(e) par l'excursion " + (item.title || "") +
+        ". Pouvez-vous m'indiquer les disponibilités ?";
+      return (
+        '<article class="card reveal" id="excursion-' + escapeHtml(item.id) + '" data-categories="' + escapeHtml(cats) + '" data-dest="' + escapeHtml(item.id) + '">' +
+          '<div class="card-media" data-fallback-icon="icon-mask">' +
+            '<img src="' + escapeHtml(item.photo || "") + '" alt="' + escapeHtml(item.title) + '" loading="lazy">' +
+            (item.tag ? '<span class="card-tag">' + escapeHtml(item.tag) + '</span>' : "") +
+          '</div>' +
+          '<div class="card-body">' +
+            '<h3>' + escapeHtml(item.title) + '</h3>' +
+            '<p class="card-meta"><svg width="16" height="16"><use href="#icon-clock"/></svg> <span>' + escapeHtml(item.meta) + '</span></p>' +
+            '<p>' + escapeHtml(item.desc) + '</p>' +
+            '<div class="card-footer">' +
+              '<span class="price">' + escapeHtml(item.price) + '</span>' +
+              '<a href="#" class="btn btn-whatsapp btn-small" data-wa-msg="' + escapeHtml(waMsg) + '">' +
+                '<svg width="16" height="16"><use href="#icon-whatsapp"/></svg><span>Réserver</span>' +
+              '</a>' +
+            '</div>' +
+          '</div>' +
+        '</article>'
+      );
+    }).join("");
+  }
+
+  function renderGallery(items) {
+    var grid = document.querySelector(".gallery-grid");
+    if (!grid || !items || !items.length) return;
+    grid.innerHTML = items.map(function (entry) {
+      var photo = entry && entry.photo ? entry.photo : "";
+      return (
+        '<div class="gallery-item reveal" data-fallback-icon="icon-boat">' +
+          '<img src="' + escapeHtml(photo) + '" alt="Photo Meli Évasion" loading="lazy">' +
+        '</div>'
+      );
+    }).join("");
+  }
+
+  function renderFaq(items) {
+    var list = document.querySelector(".faq-list");
+    if (!list || !items || !items.length) return;
+    list.innerHTML = items.map(function (entry, i) {
+      if (!entry) return "";
+      return (
+        '<details class="faq-item reveal"' + (i === 0 ? " open" : "") + '>' +
+          '<summary>' + escapeHtml(entry.q) + '</summary>' +
+          '<p>' + escapeHtml(entry.a) + '</p>' +
+        '</details>'
+      );
+    }).join("");
+  }
+
   function applyContentOverlay(data) {
     if (data.hero) {
       setCmsText(document, "[data-cms='hero.title']", data.hero.title);
@@ -321,37 +390,20 @@
       if (text1El && data.histoire.text1) text1El.innerHTML = data.histoire.text1;
       setCmsText(document, "[data-cms='histoire.text2']", data.histoire.text2);
     }
-    if (data.destinations && data.destinations.items) {
-      data.destinations.items.forEach(function (item) {
-        if (!item || !item.id) return;
-        var card = document.querySelector('[data-dest="' + item.id + '"]');
-        if (!card) return;
-        setCmsImg(card, '[data-cms-field="photo"]', item.photo);
-        setCmsText(card, '[data-cms-field="title"]', item.title);
-        setCmsText(card, '[data-cms-field="meta"]', item.meta);
-        setCmsText(card, '[data-cms-field="desc"]', item.desc);
-        setCmsText(card, '[data-cms-field="price"]', item.price);
-      });
-    }
-    if (data.gallery && data.gallery.items) {
-      data.gallery.items.forEach(function (entry, i) {
-        var img = document.querySelector('[data-gallery="' + i + '"]');
-        if (img && entry && entry.photo) img.src = entry.photo;
-      });
-    }
-    if (data.faq && data.faq.items) {
-      data.faq.items.forEach(function (entry, i) {
-        var item = document.querySelector('[data-faq="' + i + '"]');
-        if (!item || !entry) return;
-        setCmsText(item, '[data-cms-field="q"]', entry.q);
-        setCmsText(item, '[data-cms-field="a"]', entry.a);
-      });
-    }
+    if (data.destinations && data.destinations.items) renderDestinations(data.destinations.items);
+    if (data.gallery && data.gallery.items) renderGallery(data.gallery.items);
+    if (data.faq && data.faq.items) renderFaq(data.faq.items);
     if (data.misc) {
       setCmsText(document, "[data-cms='misc.profil_pecheur_text']", data.misc.profil_pecheur_text);
       setCmsText(document, "[data-cms='misc.testimonial_title']", data.misc.testimonial_title);
       setCmsText(document, "[data-cms='misc.testimonial_note']", data.misc.testimonial_note);
     }
+    // Le rendu dynamique remplace des blocs entiers du DOM : on ré-applique
+    // les comportements qui dépendent des éléments (liens WhatsApp, repli
+    // photo, apparition au scroll) sur les nouveaux éléments créés.
+    wireWhatsappLinks();
+    wireImageFallbacks();
+    wireRevealOnScroll();
   }
 
   function wireContentOverlay() {
