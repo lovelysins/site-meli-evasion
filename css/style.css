@@ -613,24 +613,34 @@ section[id], .card[id] { scroll-margin-top: var(--header-h); }
 .bubble-in { align-self: flex-start; background: #fff; color: var(--color-ink); border-bottom-left-radius: 4px; box-shadow: 0 4px 10px -6px rgba(0,0,0,.2); }
 .bubble-out { align-self: flex-end; background: var(--color-lagoon); color: #fff; border-bottom-right-radius: 4px; }
 
-/* ===================== Avis / placeholder témoignages ===================== */
+/* ===================== Avis clients ===================== */
 .testimonial-placeholder {
+  position: relative;
   max-width: 620px;
   margin: 0 auto;
   text-align: center;
-  border: 1.5px dashed var(--color-lagoon);
-  border-radius: var(--radius-md);
-  padding: 40px 32px;
-  background: rgba(255,255,255,.5);
+  border-radius: var(--radius-lg);
+  padding: 48px 40px 40px;
+  background: #fff;
+  box-shadow: var(--shadow-card);
+}
+.testimonial-placeholder::before {
+  content: "\201C";
+  display: block;
+  font-family: var(--font-display);
+  font-size: 3.5rem;
+  line-height: 1;
+  color: var(--color-lagoon);
+  margin-bottom: .1em;
 }
 .testimonial-placeholder p {
   font-family: var(--font-display);
-  font-style: italic;
-  font-size: 1.15rem;
+  font-weight: 700;
+  font-size: 1.2rem;
   color: var(--color-maroon-dark);
   margin-bottom: .5em;
 }
-.testimonial-placeholder span { font-size: .85rem; color: #8a7a6d; }
+.testimonial-placeholder span { display: block; font-size: .95rem; line-height: 1.7; color: #5a473d; }
 
 /* ===================== Pourquoi nous / Engagement ===================== */
 .engagement-head { max-width: 680px; margin: 0 auto 48px; text-align: center; }
