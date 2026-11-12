@@ -9,8 +9,7 @@
         "snorkeling"
       ],
       "meta": "Journée ou demi-journée",
-      "desc": "Snorkeling dans la réserve marine de Tanikely : tortues, poissons tropicaux et fonds coralliens protégés.",
-      "price": "à partir de 70 €/pers."
+      "desc": "Snorkeling dans la réserve marine de Tanikely : tortues, poissons tropicaux et fonds coralliens protégés."
     },
     {
       "id": "komba",
@@ -22,8 +21,7 @@
         "snorkeling"
       ],
       "meta": "Demi-journée",
-      "desc": "Village, parc à lémuriens en semi-liberté et spots de snorkeling à deux pas de notre port d'attache.",
-      "price": "à partir de 35 €/pers."
+      "desc": "Village, parc à lémuriens en semi-liberté et spots de snorkeling à deux pas de notre port d'attache."
     },
     {
       "id": "vorona",
@@ -34,8 +32,7 @@
         "faciles"
       ],
       "meta": "Demi-journée",
-      "desc": "Le petit îlot au phare entre Nosy Be et Nosy Komba, sanctuaire d'oiseaux marins — une sortie courte et paisible.",
-      "price": "Tarif sur demande"
+      "desc": "Le petit îlot au phare entre Nosy Be et Nosy Komba, sanctuaire d'oiseaux marins — une sortie courte et paisible."
     },
     {
       "id": "fanihy",
@@ -48,8 +45,7 @@
         "atypiques"
       ],
       "meta": "Journée complète",
-      "desc": "L'île aux chauves-souris, sauvage et peu fréquentée : plage immaculée, snorkeling et vraie sensation de Robinson Crusoé.",
-      "price": "Tarif sur demande"
+      "desc": "L'île aux chauves-souris, sauvage et peu fréquentée : plage immaculée, snorkeling et vraie sensation de Robinson Crusoé."
     },
     {
       "id": "mamoko",
@@ -61,8 +57,7 @@
         "atypiques"
       ],
       "meta": "Journée complète",
-      "desc": "Tortues terrestres et cascade sur la grande terre : une excursion atypique, loin des sentiers battus.",
-      "price": "Tarif sur demande"
+      "desc": "Tortues terrestres et cascade sur la grande terre : une excursion atypique, loin des sentiers battus."
     },
     {
       "id": "iranja",
@@ -73,8 +68,7 @@
         "aventures"
       ],
       "meta": "Journée complète (départ tôt)",
-      "desc": "Sa langue de sable de 2 km entre deux îlots, l'une des plus belles vues de l'archipel : une échappée plus lointaine pour les envies d'aventure.",
-      "price": "Tarif sur demande"
+      "desc": "Sa langue de sable de 2 km entre deux îlots, l'une des plus belles vues de l'archipel : une échappée plus lointaine pour les envies d'aventure."
     },
     {
       "id": "mitsio",
@@ -86,8 +80,7 @@
         "snorkeling"
       ],
       "meta": "Journée complète (départ tôt)",
-      "desc": "Un archipel plus au nord aux fonds marins spectaculaires : notre sortie la plus aventureuse, pour une eau exceptionnellement transparente.",
-      "price": "Tarif sur demande"
+      "desc": "Un archipel plus au nord aux fonds marins spectaculaires : notre sortie la plus aventureuse, pour une eau exceptionnellement transparente."
     },
     {
       "id": "coucher-soleil",
@@ -96,8 +89,7 @@
       "tag": "Fin de journée",
       "categories": [],
       "meta": "Environ 2 heures",
-      "desc": "Une sortie courte et conviviale en fin de journée pour profiter du coucher de soleil sur l'océan, boissons à bord.",
-      "price": "à partir de 30 €/pers."
+      "desc": "Une sortie courte et conviviale en fin de journée pour profiter du coucher de soleil sur l'océan, boissons à bord."
     },
     {
       "id": "prive",
@@ -106,8 +98,7 @@
       "tag": "Sur-mesure",
       "categories": [],
       "meta": "Durée flexible",
-      "desc": "Bateau privatisé et itinéraire personnalisé pour les familles, groupes d'amis ou occasions spéciales : vous composez votre journée idéale autour de Nosy Komba.",
-      "price": "Tarif sur demande"
+      "desc": "Bateau privatisé et itinéraire personnalisé pour les familles, groupes d'amis ou occasions spéciales : vous composez votre journée idéale autour de Nosy Komba."
     }
   ]
 }
