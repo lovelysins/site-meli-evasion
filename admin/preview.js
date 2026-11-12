@@ -76,7 +76,7 @@
                 h("h3", null, text(item, "title")),
                 h("p", { className: "card-meta" }, text(item, "meta")),
                 h("p", null, text(item, "desc")),
-                h("div", { className: "card-footer" }, h("span", { className: "price" }, text(item, "price")))
+                h("div", { className: "card-footer" }, h("span", { className: "btn btn-whatsapp btn-small" }, "Réserver"))
               )
             );
           })

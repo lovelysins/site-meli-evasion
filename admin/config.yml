@@ -59,7 +59,6 @@ collections:
                   - {label: "Atypiques", value: "atypiques"}
               - {label: "Durée", name: "meta", widget: "string"}
               - {label: "Description", name: "desc", widget: "text"}
-              - {label: "Tarif affiché", name: "price", widget: "string"}
 
       - name: "gallery"
         label: "Galerie photos"

@@ -863,3 +863,6 @@ section[id], .card[id] { scroll-margin-top: var(--header-h); }
   .footer-brand { grid-column: span 1; }
   .section { padding: 70px 0; }
 }
+
+/* Pas de tarifs affichés : le bouton WhatsApp occupe toute la largeur du pied de carte / de la bulle */
+.card-footer .btn, .map-popup-footer .btn { width: 100%; justify-content: center; }

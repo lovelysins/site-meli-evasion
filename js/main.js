@@ -134,7 +134,6 @@
       title: "Nosy Tanikely",
       meta: "Journée ou demi-journée",
       desc: "Réserve marine : tortues, poissons tropicaux et fonds coralliens protégés.",
-      price: "à partir de 70 €/pers.",
       anchor: "#excursion-tanikely",
       waMsg: "Bonjour, je suis intéressé(e) par l'excursion à Nosy Tanikely. Pouvez-vous m'indiquer les disponibilités ?"
     },
@@ -145,7 +144,6 @@
       title: "Tour de Nosy Komba",
       meta: "Demi-journée",
       desc: "Village, parc à lémuriens en semi-liberté et snorkeling à deux pas du port d'attache.",
-      price: "à partir de 35 €/pers.",
       anchor: "#excursion-komba",
       waMsg: "Bonjour, je suis intéressé(e) par le tour de Nosy Komba. Pouvez-vous m'indiquer les disponibilités ?"
     },
@@ -156,7 +154,6 @@
       title: "Nosy Vorona",
       meta: "Demi-journée",
       desc: "Le petit îlot au phare entre Nosy Be et Nosy Komba, sanctuaire d'oiseaux marins.",
-      price: "Tarif sur demande",
       anchor: "#excursion-vorona",
       waMsg: "Bonjour, je suis intéressé(e) par l'excursion à Nosy Vorona. Pouvez-vous m'indiquer les disponibilités ?"
     },
@@ -167,7 +164,6 @@
       title: "Nosy Mamoko",
       meta: "Journée complète",
       desc: "Tortues terrestres et cascade sur la grande terre : une sortie loin des sentiers battus.",
-      price: "Tarif sur demande",
       anchor: "#excursion-mamoko",
       waMsg: "Bonjour, je suis intéressé(e) par l'excursion à Nosy Mamoko. Pouvez-vous m'indiquer les disponibilités ?"
     },
@@ -178,7 +174,6 @@
       title: "Nosy Iranja",
       meta: "Journée complète (départ tôt)",
       desc: "Sa langue de sable de 2 km entre deux îlots, l'une des plus belles vues de l'archipel.",
-      price: "Tarif sur demande",
       anchor: "#excursion-iranja",
       waMsg: "Bonjour, je suis intéressé(e) par l'excursion à Nosy Iranja. Pouvez-vous m'indiquer les disponibilités ?"
     },
@@ -189,7 +184,6 @@
       title: "Nosy Mitsio",
       meta: "Journée complète (départ tôt)",
       desc: "Un archipel plus au nord aux fonds marins spectaculaires : notre sortie la plus aventureuse.",
-      price: "Tarif sur demande",
       anchor: "#excursion-mitsio",
       waMsg: "Bonjour, je suis intéressé(e) par l'excursion à Nosy Mitsio. Pouvez-vous m'indiquer les disponibilités ?"
     },
@@ -200,7 +194,6 @@
       title: "Coucher de soleil en mer",
       meta: "Environ 2 heures",
       desc: "Sortie courte et conviviale pour profiter du coucher de soleil sur l'océan.",
-      price: "à partir de 30 €/pers.",
       anchor: "#excursion-coucher-soleil",
       waMsg: "Bonjour, je suis intéressé(e) par la croisière Coucher de soleil en mer. Pouvez-vous m'indiquer les disponibilités ?"
     },
@@ -211,7 +204,6 @@
       title: "Excursion privée sur-mesure",
       meta: "Durée flexible",
       desc: "Bateau privatisé et itinéraire personnalisé pour votre groupe.",
-      price: "Tarif sur demande",
       anchor: "#excursion-prive",
       waMsg: "Bonjour, je souhaiterais organiser une excursion privée sur-mesure avec Meli Évasion. Pouvez-vous me donner plus d'informations ?"
     }
@@ -251,8 +243,7 @@
         '<p class="map-popup-meta">' + spot.meta + "</p>" +
         "<p>" + spot.desc + "</p>" +
         '<div class="map-popup-footer">' +
-        '<span class="map-popup-price">' + spot.price + "</span>" +
-        '<a href="' + waUrl + '" target="_blank" rel="noopener" class="btn btn-whatsapp btn-small">' +
+                '<a href="' + waUrl + '" target="_blank" rel="noopener" class="btn btn-whatsapp btn-small">' +
         '<svg width="16" height="16"><use href="#icon-whatsapp"/></svg><span>Je réserve</span>' +
         "</a>" +
         "</div>" +
@@ -341,8 +332,7 @@
             '<p class="card-meta"><svg width="16" height="16"><use href="#icon-clock"/></svg> <span>' + escapeHtml(item.meta) + '</span></p>' +
             '<p>' + escapeHtml(item.desc) + '</p>' +
             '<div class="card-footer">' +
-              '<span class="price">' + escapeHtml(item.price) + '</span>' +
-              '<a href="#" class="btn btn-whatsapp btn-small" data-wa-msg="' + escapeHtml(waMsg) + '">' +
+                            '<a href="#" class="btn btn-whatsapp btn-small" data-wa-msg="' + escapeHtml(waMsg) + '">' +
                 '<svg width="16" height="16"><use href="#icon-whatsapp"/></svg><span>Réserver</span>' +
               '</a>' +
             '</div>' +
